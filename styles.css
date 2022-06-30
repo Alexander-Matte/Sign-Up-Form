@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    flex-basis: 100vh;
+    display: flex;
+}
+
+.img-sidebar {
+    flex: 1;
+    background-color: lightblue;
+
+}
+
+.content-sidebar {
+    flex: 2;
+    background-color: lightsalmon;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+    border: .5px solid black;
+}
