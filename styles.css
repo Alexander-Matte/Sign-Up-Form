@@ -31,34 +31,106 @@ body {
 
 }
 
-.content-sidebar {
-    flex: 2;
-    background-color: lightsalmon;
-    display: flex;
-    flex-direction: column;
-}
-
-.content {
-    flex: 1;
-    border: .5px solid black;
-}
-
-.props, .banner {
-    color: white;
-}
-
-.props {
-}
-
 .banner {
     width: 100%;
     height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    opacity: .3;
+    background-color: rgba(0,0,0, 0.3);
     font: 1.2rem white;
 
 }
 
+.props, .banner {
+    color: white;
+}
+
+.content-sidebar {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.content {
+    flex: 1;
+}
+
+ 
+.content-header > p {
+    margin: 30px  250px 30px 30px;
+    padding: 15px;
+    font-size: 1.7rem;
+}
+
+
+
+
+
+.content:nth-child(odd) {
+    background-color:  #e5e7eb;
+}
+
+.content-form {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+}
+
+form {
+    display: flex;
+    margin-left: 30px;
+    padding: 15px;
+    font-size: 1.7rem;
+    width: 60%;
+
+}
+
+legend {
+    margin-top: 5px;
+    margin-left: 30px;
+    padding: 10px;
+    font-size: 1.7rem;
+
+}
+
+.left-side, .right-side {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+}
+
+
+input[name] {
+    margin-bottom: 15px;
+    width: 70%;
+    border: 1px solid #E5E7EB;
+    border-radius: 3px;
+}
+
+
+
+[type="submit"] {
+    height: 50px;
+    width: 270px;
+    padding: 5px;
+    margin-top: 35px;
+    margin-left: 35px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    
+}
+
+.content-footer p {
+    margin-left: 35px;
+}
+
+a {
+    text-decoration: none;
+    color: darkcyan;
+}
