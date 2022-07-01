@@ -5,46 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Satisfy&display=swap');
+        </style>  
     <title>Sign In Form</title>
 </head>
 <body>
     <div class="wrapper">
         <div class="img-sidebar">
-            <div class="banner"> I AM A BANNER</div>
-            <p class="props">Photo by Josh Hild on Unsplash</a></p>
+            <div class="banner"><img src="/img/bonfire.png" alt="" srcset="">ATHABASCA</div>
+            <p class="props">Photo by Josh Hild on Unsplash | <a href="https://www.flaticon.com/free-icons/firewood" title="firewood icons">Firewood icons created by Mehwish - Flaticon</a></p>
         </div>
         <div class="content-sidebar">
             <div class="content content-header">
                 <p>This is not a real online service! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit odio error esse. Dignissimos laborum iure beatae ratione perspiciatis corporis.</p>
-                <p>You know what <em style="font-size: 1.7rem;">you</em> want!</p>
+                <p>You <em style="font-size: 1.7rem;">know </em>what <em style="font-size: 1.7rem;">you </em> want!</p>
             </div>
             <div class="content content-form">
-                <legend>Lets do this!</legend>
+                <legend>Let's do this!</legend>
                 <form action="#" method="post">
                     <div class="left-side">
-                        <label for="firstName">FIRST NAME</label>
-                        <input type="text" name="firstname" id="firstName">
+                        <label for="firstName">FIRST NAME*</label>
+                        <input type="text" name="firstname" id="firstName" placeholder="John" required minlength="3" maxlength="20">
 
-                        <label for="email">EMAIL</label>
-                        <input type="email" name="email" id="email">
+                        <label for="email">EMAIL*</label>
+                        <input type="email" name="email" id="email" placeholder="example@hotmail.com" required>
                         
-                        <label for="password">PASSWORD</label>
-                        <input type="password" name="password" id="password">
+                        <label for="password">PASSWORD*</label>
+                        <!-- Pattern for Password (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars) -->
+                        <input class="error" type="password" name="password" id="password" minlength="8" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Password must have the following: UpperCase, LowerCase, Number/SpecialChar and min 8 Chars">
                     </div>
 
                     <div class="right-side">
-                        <label for="lastName">LAST NAME</label>
-                        <input type="text" name="lastname" id="lastName">
+                        <label for="lastName">LAST NAME*</label>
+                        <input type="text" name="lastname" id="lastName" placeholder="Doe" required maxlength="40">
 
                         <label for="phone">PHONE NUMBER</label>
-                        <input type="tel" name="phone" id="phone">
+                        <input type="tel" name="phone" id="phone" placeholder="123-456-7890" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
                         
-                        <label for="passConfirm">CONFIRM PASSWORD</label>
-                        <input type="password" name="passConfirm" id="passConfirm">
+                        <label for="passConfirm">CONFIRM PASSWORD*</label>
+                        <input class="error" type="password" name="passConfirm" id="passConfirm" required>
                     </div>
 
 
                 </form>
+                <p>* Required</p>
             </div>
             <div class="content content-footer">
                 <button type="submit">Create Account</button>
