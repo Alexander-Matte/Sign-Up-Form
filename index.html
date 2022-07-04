@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Satisfy&display=swap');
-        </style>  
+    </style> 
     <title>Sign In Form</title>
 </head>
 <body>
@@ -23,37 +23,40 @@
             </div>
             <div class="content content-form">
                 <legend>Let's do this!</legend>
-                <form action="#" method="post">
+                <form action="#" method="post" id="signUpForm">
                     <div class="left-side">
                         <label for="firstName">FIRST NAME*</label>
-                        <input type="text" name="firstname" id="firstName" placeholder="John" required minlength="3" maxlength="20">
+                        <input class="colorable" type="text" name="firstname" id="firstName" placeholder="John" required minlength="3" maxlength="20">
 
                         <label for="email">EMAIL*</label>
-                        <input type="email" name="email" id="email" placeholder="example@hotmail.com" required>
+                        <input class="colorable" type="email" name="email" id="email" placeholder="example@hotmail.com" required>
                         
                         <label for="password">PASSWORD*</label>
                         <!-- Pattern for Password (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars) -->
-                        <input class="error" type="password" name="password" id="password" minlength="8" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Password must have the following: UpperCase, LowerCase, Number/SpecialChar and min 8 Chars">
+                        <input type="password" name="password" id="password" minlength="8" placeholder=" " required >
                     </div>
 
                     <div class="right-side">
                         <label for="lastName">LAST NAME*</label>
-                        <input type="text" name="lastname" id="lastName" placeholder="Doe" required maxlength="40">
+                        <input class="colorable" type="text" name="lastname" id="lastName" placeholder="Doe" required maxlength="40">
 
                         <label for="phone">PHONE NUMBER</label>
-                        <input type="tel" name="phone" id="phone" placeholder="123-456-7890" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+                        <input class="colorable" type="tel" name="phone" id="phone" placeholder="123-456-7890" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
                         
                         <label for="passConfirm">CONFIRM PASSWORD*</label>
-                        <input class="error" type="password" name="passConfirm" id="passConfirm" required>
+                        <input type="password" name="passConfirm" id="passConfirm"  placeholder=" " required>
+
+                        
                     </div>
 
 
                 </form>
+
                 <p>* Required</p>
             </div>
             <div class="content content-footer">
-                <button type="submit">Create Account</button>
-                <p>Already have an account?<a href="examplelogin.html"> Log in</a></p>
+                <button form="signUpForm" type="submit" href = "#" onclick="isSamePwd(event)">Create Account</button>
+                <p>Already have an account?<a href="#"> Log in</a></p>
 
             </div>
             
@@ -68,15 +71,27 @@
 
 
 
+<script>
+    //Checks if passwords are the same.
+    const isSamePwd = event => {
+    let password = document.getElementById("password").value
+    let passwordConfirm = document.getElementById("passConfirm").value
+    if (password === passwordConfirm){
+        //Indicate here to user that passwords match by making border green or displaying message beside.
+        alert("Password are the same.");
+    } else {
+        //Indicate here to user that passwords did not match with a red input border and display a message
+        alert("Passwords were different");
+    }
+}
+
+
+
+</script>
 
 
 
 
 
-
-
-
-
-    <script src="script.js"></script>
 </body>
 </html>
