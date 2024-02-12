@@ -8,6 +8,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Satisfy&display=swap');
     </style> 
+    <script src="script.js" defer></script>
     <title>Sign In Form</title>
 </head>
 <body>
@@ -25,73 +26,58 @@
                 <legend>Let's do this!</legend>
                 <form action="#" method="post" id="signUpForm">
                     <div class="left-side">
-                        <label for="firstName">FIRST NAME*</label>
-                        <input class="colorable" type="text" name="firstname" id="firstName" placeholder="John" required minlength="3" maxlength="20">
-
-                        <label for="email">EMAIL*</label>
-                        <input class="colorable" type="email" name="email" id="email" placeholder="example@hotmail.com" required>
                         
-                        <label for="password">PASSWORD*</label>
-                        <!-- Pattern for Password (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars) -->
-                        <input type="password" name="password" id="password" minlength="8" placeholder=" " required >
+                        <div>
+                            <label for="firstName">FIRST NAME *</label>
+                            <input class="colorable" type="text" name="firstname" id="firstName" placeholder="John" required>
+                            <span id="fNameError" class="formError"></span>
+                        </div>
+
+                        <div>
+                            <label for="email">EMAIL*</label>
+                            <input class="colorable" type="email" name="email" id="email" placeholder="example@hotmail.com" required>
+                            <span id="emailError" class="formError"></span>
+                        </div>
+
+                        <div>
+                            <label for="password">PASSWORD*</label>
+                            <input type="password" name="password" id="password" minlength="8" required >
+                            <span id="passError" class="formError"></span>
+                        </div>
+
                     </div>
 
                     <div class="right-side">
-                        <label for="lastName">LAST NAME*</label>
-                        <input class="colorable" type="text" name="lastname" id="lastName" placeholder="Doe" required maxlength="40">
+                        <div>
+                            <label for="lastName">LAST NAME</label>
+                            <input class="colorable" type="text" name="lastname" id="lastName" placeholder="Doe">
+                        </div>
 
-                        <label for="phone">PHONE NUMBER</label>
-                        <input class="colorable" type="tel" name="phone" id="phone" placeholder="123-456-7890" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
-                        
-                        <label for="passConfirm">CONFIRM PASSWORD*</label>
-                        <input type="password" name="passConfirm" id="passConfirm"  placeholder=" " required>
+                        <div>
+                            <label for="phone">PHONE NUMBER</label>
+                            <input class="colorable" type="tel" name="phone" id="phone" placeholder="123-456-7890" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+                        </div>
+
+                        <div>
+                            <label for="passConfirm">CONFIRM PASSWORD*</label>
+                            <input type="password" name="passConfirm" id="passConfirm"  placeholder=" " required>
+                            <span id="confirmPassError" class="formError"></span>
+                        </div>
+
 
                         
                     </div>
-
-
+                    <button type="submit">Click here to Submit</button>
                 </form>
 
                 <p>* Required</p>
             </div>
-            <div class="content content-footer">
-                <button form="signUpForm" type="submit" href = "#" onclick="isSamePwd(event)">Create Account</button>
-                <p>Already have an account?<a href="#"> Log in</a></p>
 
-            </div>
             
             
 
         </div>
     </div>
-
-    
-
-
-
-
-
-<script>
-    //Checks if passwords are the same.
-    const isSamePwd = event => {
-    let password = document.getElementById("password").value
-    let passwordConfirm = document.getElementById("passConfirm").value
-    if (password === passwordConfirm){
-        //Indicate here to user that passwords match by making border green or displaying message beside.
-        alert("Password are the same.");
-    } else {
-        //Indicate here to user that passwords did not match with a red input border and display a message
-        alert("Passwords were different");
-    }
-}
-
-
-
-</script>
-
-
-
-
 
 </body>
 </html>

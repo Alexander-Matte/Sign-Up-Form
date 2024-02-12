@@ -116,13 +116,17 @@ legend {
 .left-side, .right-side {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    gap: 10px;
 
+}
+
+.left-side > div, .right-side > div{
+    display: flex;
+    flex-direction: column;
 }
 
 
 input {
-    margin-bottom: 15px;
     width: 70%;
     border: 2px solid #E5E7EB;
     border-radius: 3px;
@@ -133,15 +137,9 @@ input:focus {
 
 }
 
-input.colorable:not(:focus):not(:placeholder-shown):invalid {
-    border-color: #df2e04;
+input:focus:invalid {
+    border: 1px solid red;
 }
-
-
-input.colorable:not(:focus):not(:placeholder-shown):valid {
-    border-color: #078005;
-  }
-  
 
 .content-form p{
     margin-bottom: 5px;
@@ -170,6 +168,12 @@ button {
 a {
     text-decoration: none;
     color: #134e13;
+}
+
+.formError {
+    color: red;
+    padding: 5px 0;
+
 }
 
 
